@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Items</title>
+    <link rel="stylesheet" href="available-items.css">
+    
+    <style>
+      
+ </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Available Items</h1>
+      <div class="item-grid">
+        <div class="item">
+          <img src="images/jordan1.jpg" alt="Air Jordan Shoes" class="item-image" onclick="openModal(0)">
+          <div class="item-title">Air Jordan</div>
+          <div class="item-description">Perfect for you.</div>
+          <div class="item-price">₱200.00 per day</div>
+          <a href="my-rentals.html"><button>Rent Item</button></a>
+        </div>
+        <div class="item">
+          <img src="images/camera.jpg" alt="Item 2" class="item-image" onclick="openModal(1)">
+          <div class="item-title">Canon Camera</div>
+          <div class="item-description">Stylish and comfortable.</div>
+          <div class="item-price">₱150.00 per day</div>
+          <a href="my-rentals.html"><button>Rent Item</button></a>
+        </div>
+        <div class="item">
+          <img src="images/item3.jpg" alt="Item 3" class="item-image" onclick="openModal(2)">
+          <div class="item-title">Adidas Runners</div>
+          <div class="item-description">Run with style.</div>
+          <div class="item-price">₱180.00 per day</div>
+          <a href="my-rentals.html"><button>Rent Item</button></a>
+        </div>
+      </div>
+    </div>
+  
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <img id="modalImage" class="modal-image" src="images/jordan1.jpg">
+      </div>
+      <div class="modal-nav">
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+      </div>
+    </div>
+  
+    <script>
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+  
+      const itemsImages = [
+        ['images/jordan1.jpg', 'images/jordan2.jpg', 'images/jordan3.jpg'],
+        ['images/camera.jpg', 'images/camera2.jpg', 'images/camera3.jpg',  'images/camera4.jpg'],
+        ['images/item3.jpg', 'images/item32.jpg', 'images/.jpg', 'images/']
+      ];
+  
+      let currentImageIndex = 0;
+      let currentItemIndex = 0;
+  
+      // Open modal with images based on item clicked
+      function openModal(itemIndex) {
+        currentItemIndex = itemIndex;
+        currentImageIndex = 0; // Start with the first image of the clicked item
+        modalImage.src = itemsImages[currentItemIndex][currentImageIndex];
+        modal.style.display = 'block';
+      }
+  
+      // Close the modal
+      function closeModal() {
+        modal.style.display = 'none';
+      }
+      function changeImage(direction) {
+  const images = itemsImages[currentItemIndex];
+  currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+  modalImage.src = images[currentImageIndex]; 
+}
+
+  </script>
+  <script src="script.js"></script> </body>
+</html>
+      
+</body>
+</html>

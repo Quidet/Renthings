@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rentals - Renthings Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css"> <!-- Link to your main dashboard styles -->
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                
+                <li><a href="my-rentals.html"><i class="icon-rentals"></i> My Rentals</a></li>
+                <li><a href="available-items.html"><i class="icon-items"></i> Available Items</a></li>
+                <li><a href="settings.html"><i class="icon-settings"></i> Settings</a></li>
+                <li><a href="about-us.html"><i class="icon-home"></i> Message Us</a></li>
+                <li><a href="index.html"><i class="icon-logout"></i> Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+                <h1>My Rentals</h1>
+            </header>
+
+            <!-- Rentals Section -->
+            <section id="my-rentals" class="content-card">
+                <h2>Current Rentals</h2>
+                <div class="rental-list">
+                    <!-- Rental Item 1 -->
+                    <div class="rental-item">
+                        <img src="images/bicycle.jpg" alt="Bicycle" class="rental-img">
+                        <h3>Bicycle</h3>
+                        <p>Rent for $10/day</p>
+                        <p>Start Date: 2024-11-01</p>
+                        <p>End Date: 2024-11-10</p>
+                        <button onclick="returnItem('Bicycle')">Return Item</button>
+                    </div>
+
+                    <!-- Rental Item 2 -->
+                    <div class="rental-item">
+                        <img src="images/camera.jpg" alt="Camera" class="rental-img">
+                        <h3>Camera</h3>
+                        <p>Rent for ₱150.00 per day</p>-
+                        <p>Start Date: 2024-11-05</p>
+                        <p>End Date: 2024-11-12</p>
+                        <button onclick="returnItem('Camera')">Return Item</button>
+                    </div>
+
+                    <!-- Rental Item 3 -->
+                    <div class="rental-item">
+                        <img src="images/tent.jpg" alt="Tent" class="rental-img">
+                        <h3>Tent</h3>
+                        <p>Rent for $25/day</p>
+                        <p>Start Date: 2024-11-02</p>
+                        <p>End Date: 2024-11-09</p>
+                        <button onclick="returnItem('Tent')">Return Item</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

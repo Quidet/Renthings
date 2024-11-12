@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renthings</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <nav class="sidebar">   
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="my-rentals.html"><i class="icon-rentals"></i> My Rentals</a></li>
+                <li><a href="available-items.html"><i class="icon-items"></i> Available Items</a></li>
+                <li><a href="settings.html"><i class="icon-settings"></i> Settings</a></li>
+                <li><a href="about-us.html"><i class="icon-home"></i> Message Us</a></li>
+                <li><a href="index.html"><i class="icon-logout"></i> Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header with Search Bar -->
+            <header>
+                <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+                <h1>Rent instead of buying</h1>
+                
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search items..." onkeyup="searchItems()">
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <section id="available-items" class="content-card">
+                <h2>Dashboard</h2>
+                <div class="item-list" id="itemList">
+                    <div class="item-card">
+                        <h3>Tent</h3>
+                        <p>Rent for $25/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Shoes</h3>
+                        <p>Rent for $30/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Camera</h3>
+                        <p>Rent for $15/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Car</h3>
+                        <p>Rent for $10/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Bike</h3>
+                        <p>Rent for $12/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Laptop</h3>
+                        <p>Rent for $50/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Drone</h3>
+                        <p>Rent for $40/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Table</h3>
+                        <p>Rent for $15/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Projector</h3>
+                        <p>Rent for $30/day</p>
+                    </div>
+                    <div class="item-card">
+                        <h3>Golf Clubs</h3>
+                        <p>Rent for $25/day</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Modal for showing images -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-content" alt="Item Image">
+        <div id="caption" class="caption"></div>
+    </div>
+
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
